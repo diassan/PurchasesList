@@ -6,8 +6,35 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Purchases List<span id="items-count" class="badge badge-primary">0</span></h1>
+            <div class="row">
+                <div class="col">
+                    <input id="name" type = "text" class="form-control">
+                </div>
+                <div class="col">
+                    <input id="price" type = "number" class="form-control">
+                </div>
+                <div class="col">
+                    <input id="category" type = "text" class="form-control">
+                </div>
+                <div class="col">
+                    <button id="add">Add</button>
+                </div>
+            </div>
+            <ul id="items" class="list-group list-group-horizontal-xl"></ul>
+        </div>
+        <div class="col">
+            <h2>Most Purshase</h2>
+            <output id="result">0</output>
+        </div>
+    </div>
+</div>
 <script src="js/app.js" type="module"></script>
 </body>
 </html>
