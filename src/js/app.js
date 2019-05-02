@@ -5,7 +5,7 @@ const buttonEl = document.getElementById('add');
 const itemsEl = document.getElementById('items');
 const countEl = document.getElementById('items-count');
 const resultEl = document.getElementById('result');
-let count = 0;
+
 
 function calculMost(){
     let max = {
@@ -30,18 +30,19 @@ function updateResult(itemObject){
 resultEl.textContent = itemObject.name+ '' +itemObject.price + '' +itemObject.category
 }
 
-function sumPurchases(){
-    let total = 0
-    for (const li of itemsEl.children) {
-        const price = li.children[1];
-        total += price.textContent;
-    }
-    return total
-}
+// function sumPurchases(){
+//     let total = 0;
+//     for (const li of itemsEl.children) {
+//         const price = li.children[1];
+//         total += price.textContent;
+//     }
+//     return total
+// }
 
 
 
 buttonEl.addEventListener('click', () =>{
+    let count = 0;
     const nameValue = nameEL.value;
     const priceValue = priceEL.value;
     const categoryValue = categoryEL.value;
@@ -69,16 +70,14 @@ buttonEl.addEventListener('click', () =>{
     removeEl.addEventListener('click', () => {
         itemsEl.removeChild(itemEl);
 
-        count--;
-        countEl.textContent = count;
         const maxObject = calculMost();
-        countEl.textContent = maxObject.price;
+        updateResult(maxObject);
+
     });
 
-    count++;
+
     const maxObject = calculMost();
     updateResult(maxObject);
-    countEl.textContent = maxObject.price;
 
 
     nameEL.value = priceEL.value = categoryEL.value = '';
