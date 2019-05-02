@@ -41,12 +41,13 @@ buttonEl.addEventListener('click', () =>{
     const categoryValue = categoryEL.value;
     sumAll = sumAll + priceValue*1;
     const itemEl = document.createElement('li');
-    itemEl.className = 'list-group-item d-flex';
+    itemEl.className = 'list-group-item d-flex mt-3';
     itemsEl.appendChild(itemEl);
 
     const nameItemEL = document.createElement('div');
     const priceItemEl = document.createElement('div');
     const categoryItemEL = document.createElement('div');
+    nameItemEL.className=priceItemEl.className=categoryItemEL.className = 'pl-5'
     nameItemEL.textContent = nameValue;
     priceItemEl.textContent = priceValue;
     categoryItemEL.textContent = categoryValue;
