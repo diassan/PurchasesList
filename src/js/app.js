@@ -3,7 +3,6 @@ const priceEL = document.getElementById('price');
 const categoryEL = document.getElementById('category');
 const buttonEl = document.getElementById('add');
 const itemsEl = document.getElementById('items');
-const countEl = document.getElementById('items-count');
 const resultNameEl = document.getElementById('resultName');
 const resultPriceEl = document.getElementById('resultPrice');
 const resultCatEl = document.getElementById('resultCat');
@@ -71,7 +70,6 @@ buttonEl.addEventListener('click', () =>{
         sumItem = sumItem - 1;
         const maxObject = calculMost();
         updateResult(maxObject);
-        countEl.textContent = sumAll;
         totalEl.textContent = sumAll;
         cutEL.textContent = sumItem;
     });
@@ -79,7 +77,6 @@ buttonEl.addEventListener('click', () =>{
 
     const maxObject = calculMost();
     updateResult(maxObject);
-    countEl.textContent = sumAll;
     totalEl.textContent = sumAll;
     cutEL.textContent = sumItem;
 
