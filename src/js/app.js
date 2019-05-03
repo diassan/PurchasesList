@@ -4,7 +4,9 @@ const categoryEL = document.getElementById('category');
 const buttonEl = document.getElementById('add');
 const itemsEl = document.getElementById('items');
 const countEl = document.getElementById('items-count');
-const resultEl = document.getElementById('result');
+const resultNameEl = document.getElementById('resultName');
+const resultPriceEl = document.getElementById('resultPrice');
+const resultCatEl = document.getElementById('resultCat');
 const catEl = document.getElementById('cat');
 let sumAll = 0;
 
@@ -26,14 +28,11 @@ function calculMost(){
     return max;
 }
 function updateResult(itemObject){
-    resultEl.textContent = itemObject.name+ '' +itemObject.price + '' +itemObject.category
+    resultNameEl.textContent = itemObject.name;
+    resultPriceEl.textContent = itemObject.price;
+    resultCatEl.textContent = itemObject.category;
     catEl.textContent = itemObject.category
 }
-
-
-
-
-
 
 buttonEl.addEventListener('click', () =>{
     const nameValue = nameEL.value;

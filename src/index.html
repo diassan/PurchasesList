@@ -10,35 +10,50 @@
 </head>
 <body>
 <div class="container">
-    <div class="">
         <div class="col">
             <h1>Purchases List<span id="items-count" class="badge badge-primary">0</span></h1>
             <div class="row">
                 <div class="col">
-                    <input id="name" type = "text" class="form-control">
+                    <input id="name" type = "text" placeholder="Наименование" class="form-control">
                 </div>
                 <div class="col">
-                    <input id="price" type = "number" class="form-control">
+                    <input id="price" type = "number" placeholder="Цена" class="form-control">
                 </div>
                 <div class="col">
-                    <input id="category" type = "text" class="form-control">
+                    <input id="category" type = "text" placeholder="Категория" class="form-control">
                 </div>
                 <div class="col">
                     <button id="add">Add</button>
                 </div>
             </div>
-            <ul id="items" class="list-group list-group-horizontal-sm-5"></ul>
+
+            <ul id="items" class="list-group list-group-horizontal-sm-4">
+                <li class="list-item d-flex mt-3">
+                    <div class="pl-5">Name</div>
+                    <div class="pl-5">Price</div>
+                    <div class="pl-5">Category</div>
+                </li>
+            </ul>
         </div>
-        <div class="col">
+        <div class="row">
+            <div class="col">
             <h2>Most Purshase</h2>
-            <output id="result">0</output>
+                <li class="list-item d-flex mt-3">
+                    <div class="pl-5">Name</div>
+                    <div class="pl-5">Price</div>
+                    <div class="pl-5">Category</div>
+                </li>
+                <output id="resultName" class="pl-5"></output>
+                <output id="resultPrice" class="pl-5"></output>
+                <output id="resultCat" class="pl-5"></output>
+            </div>
         </div>
+
         <div class="col">
             <h2>Most Category</h2>
-            <output id="cat">0</output>
+            <output id="cat"></output>
         </div>
     </div>
-</div>
 <script src="js/app.js" type="module"></script>
 </body>
 </html>
