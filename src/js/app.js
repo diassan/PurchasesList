@@ -8,20 +8,23 @@ const resultNameEl = document.getElementById('resultName');
 const resultPriceEl = document.getElementById('resultPrice');
 const resultCatEl = document.getElementById('resultCat');
 const catEl = document.getElementById('cat');
+const totalEl = document.getElementById('total');
+const cutEL = document.getElementById('cut');
 let sumAll = 0;
+let sumItem = 0;
 
 function calculMost(){
     let max = {
         name: 'unname',
-        price: 0,
-        category: '-'
+        category: '-',
+        price: 0
     };
     for (const li of itemsEl.children) {
-        const price = li.children[1];
+        const price = li.children[2];
         if(max.price<+price.textContent){
             max.name = li.children[0].textContent;
-            max.price = +li.children[1].textContent;
-            max.category = li.children[2].textContent;
+            max.category = li.children[1].textContent;
+            max.price = +li.children[2].textContent;
 
         }
     }
@@ -29,8 +32,8 @@ function calculMost(){
 }
 function updateResult(itemObject){
     resultNameEl.textContent = itemObject.name;
-    resultPriceEl.textContent = itemObject.price;
     resultCatEl.textContent = itemObject.category;
+    resultPriceEl.textContent = itemObject.price;
     catEl.textContent = itemObject.category
 }
 
@@ -42,17 +45,19 @@ buttonEl.addEventListener('click', () =>{
     const itemEl = document.createElement('li');
     itemEl.className = 'list-group-item d-flex mt-3';
     itemsEl.appendChild(itemEl);
+    sumItem = sumItem + 1;
 
     const nameItemEL = document.createElement('div');
-    const priceItemEl = document.createElement('div');
     const categoryItemEL = document.createElement('div');
-    nameItemEL.className=priceItemEl.className=categoryItemEL.className = 'pl-5'
+    const priceItemEl = document.createElement('div');
+    nameItemEL.className=categoryItemEL.className = 'pl-5';
+    priceItemEl.className = 'pl-5'
     nameItemEL.textContent = nameValue;
-    priceItemEl.textContent = priceValue;
     categoryItemEL.textContent = categoryValue;
+    priceItemEl.textContent = priceValue;
     itemEl.appendChild(nameItemEL);
-    itemEl.appendChild(priceItemEl);
     itemEl.appendChild(categoryItemEL);
+    itemEl.appendChild(priceItemEl);
 
 
     const removeEl = document.createElement('button');
@@ -63,15 +68,20 @@ buttonEl.addEventListener('click', () =>{
     removeEl.addEventListener('click', () => {
         itemsEl.removeChild(itemEl);
         sumAll = sumAll - priceValue*1;
+        sumItem = sumItem - 1;
         const maxObject = calculMost();
         updateResult(maxObject);
         countEl.textContent = sumAll;
+        totalEl.textContent = sumAll;
+        cutEL.textContent = sumItem;
     });
 
 
     const maxObject = calculMost();
     updateResult(maxObject);
     countEl.textContent = sumAll;
+    totalEl.textContent = sumAll;
+    cutEL.textContent = sumItem;
 
     nameEL.value = priceEL.value = categoryEL.value = '';
 });
