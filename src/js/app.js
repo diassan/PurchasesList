@@ -13,7 +13,7 @@ let sumAll = 0;
 let sumItem = 0;
 
 function calculMost(){
-    let max = {
+    const max = {
         name: 'unname',
         category: '-',
         price: 0
