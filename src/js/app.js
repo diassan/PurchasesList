@@ -13,7 +13,7 @@ let sumAll = 0;
 let sumItem = 0;
 
 function calculMost(){
-    let max = {
+    const max = {
         name: 'unname',
         category: '-',
         price: 0
@@ -49,8 +49,20 @@ buttonEl.addEventListener('click', () =>{
     const nameItemEL = document.createElement('div');
     const categoryItemEL = document.createElement('div');
     const priceItemEl = document.createElement('div');
-    nameItemEL.className=categoryItemEL.className = 'pl-5';
-    priceItemEl.className = 'pl-5'
+    // nameItemEL.className=categoryItemEL.className = 'pl-5';priceItemEl.className = 'pl-5'
+    //nameItemEL.style.position = "absolute";
+    nameItemEL.style.float = "right";
+    nameItemEL.style.marginLeft = "38px";
+    categoryItemEL.style.position = "absolute";
+    categoryItemEL.style.float = "right";
+    categoryItemEL.style.marginLeft = "298px";
+    priceItemEl.style.position = "absolute";
+    priceItemEl.style.float = "right";
+    priceItemEl.style.marginLeft = "700px";
+
+
+    // nameItemEL.className=categoryItemEL.className = 'pl-5';
+    // priceItemEl.className = 'pl-5'
     nameItemEL.textContent = nameValue;
     categoryItemEL.textContent = categoryValue;
     priceItemEl.textContent = priceValue;
@@ -61,6 +73,9 @@ buttonEl.addEventListener('click', () =>{
 
     const removeEl = document.createElement('button');
     removeEl.className = 'btn btn-danger btn-sm';
+    removeEl.style.position = "absolute"
+    removeEl.style.float = "left";
+    removeEl.style.marginLeft = "830px"
     removeEl.textContent = 'X';
     itemEl.appendChild(removeEl);
 

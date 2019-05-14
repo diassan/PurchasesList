@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container">
-        <div class="col">
+        <div class="col" >
             <h1>Purchases List</h1>
             <div class="row">
                 <div class="col">
@@ -23,33 +23,34 @@
                     <input id="category" type = "text" placeholder="Категория" class="form-control">
                 </div>
                 <div class="col">
-                    <button id="add">Add</button>
+                    <button id="add"type="button" class="btn btn-info">Add</button>
                 </div>
             </div>
 
             <ul id="items" class="list-group list-group-horizontal-sm-4">
                 <li class="list-item d-flex mt-3">
-                    <div class="pl-5">Name</div>
-                    <div class="pl-5">Category</div>
-                    <div class="pl-5">Price</div>
+                    <div class="pl-5" style="float: right; margin-left: 10px;">Name</div>
+                    <div class="pl" style="float: right; margin-left: 200px;">Category</div>
+                    <div class="pl" style="float: left; margin-left: 350px">Price</div>
                 </li>
             </ul>
         </div>
-        <div class="row">
-            <div class="col">
-            <h2>Most Purshase</h2>
-                <li class="list-item d-flex mt-3">
-                    <div class="pl-5">Name</div>
-                    <div class="pl-5">Category</div>
-                    <div class="pl-5">Price</div>
-                </li>
-                <output id="resultName" class="pl-5"></output>
-                <output id="resultCat" class="pl-5"></output>
-                <output id="resultPrice" class="pl-5"></output>
-            </div>
-        </div>
-
+    <div class="row">
         <div class="col">
+            <h2>Most Purshase</h2>
+            <li class="list-item d-flex mt-3">
+                <div class="pl-5" style="float: right; margin-left: 25px;">Name</div>
+                <div class="pl-5" style="float: right; margin-left: 150px;">Category</div>
+                <div class="pl-5" style="float: left; margin-left: 305px">Price</div>
+            </li>
+            <output id="resultName" class="pl-5" style="float: left; margin-left: 25px;"></output>
+            <output id="resultCat" class="pl-5" style="float: left; margin-left: 200px;"></output>
+            <output id="resultPrice" class="pl-5" style="float: left; margin-left: 325px"></output>
+        </div>
+    </div>
+
+
+    <div class="col">
             <h2>Most Category</h2>
             <output id="cat"></output>
         </div>
